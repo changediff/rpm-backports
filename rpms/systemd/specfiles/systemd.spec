@@ -195,18 +195,20 @@ BuildRequires:  gawk
 BuildRequires:  tree
 BuildRequires:  hostname
 %if 0%{?el7}
-BuildRequires:  python34-devel
-BuildRequires:  python34-lxml
+BuildRequires:  python36-devel
+BuildRequires:  python36-lxml
 %else
 BuildRequires:  python3-devel
 BuildRequires:  python3-lxml
 %endif
-BuildRequires:  python3
-%global __python3 /usr/bin/python3
+BuildRequires:  python36
+%global __python3 /usr/bin/python3.6
 %if 0%{?have_gnu_efi}
 BuildRequires:  gnu-efi gnu-efi-devel
 %endif
 BuildRequires:  libseccomp-devel
+# BuildRequires:  meson == 0.44.0
+# BuildRequires:  ninja-build == 1.8.2
 BuildRequires:  meson >= 0.43
 BuildRequires:  gettext
 # We use RUNNING_ON_VALGRIND in tests, so the headers need to be available
@@ -226,9 +228,9 @@ Requires:       dbus >= 1.9.18
 Requires:       %{name}-pam = %{version}-%{release}
 Requires:       %{name}-rpm-macros = %{version}-%{release}
 Requires:       %{name}-libs = %{version}-%{release}
-Recommends:     diffutils
+Requires:     diffutils
 Requires:       util-linux
-Recommends:     libxkbcommon%{?_isa}
+Requires:     libxkbcommon%{?_isa}
 Provides:       /bin/systemctl
 Provides:       /sbin/shutdown
 Provides:       syslog
@@ -335,7 +337,7 @@ Provides:       udev = %{version}
 Provides:       udev%{_isa} = %{version}
 Obsoletes:      udev < 183
 # https://bugzilla.redhat.com/show_bug.cgi?id=1377733#c9
-Suggests:       systemd-bootchart
+#Requires:       systemd-bootchart
 # https://bugzilla.redhat.com/show_bug.cgi?id=1408878
 Requires:       kbd
 
@@ -469,8 +471,8 @@ CONFIGURE_OPTS=(
 %global _hierarchy unified
 %endif
 CONFIGURE_OPTS+=(
-        -Dntp-servers='1.ntp.vip.facebook.com 2.ntp.vip.facebook.com 3.ntp.vip.facebook.com 4.ntp.vip.facebook.com'
-        -Ddns-servers='10.127.255.51 10.191.255.51 2401:db00:eef0:a53:: 2401:db00:eef0:b53::'
+        -Dntp-servers='time.windows.com time.apple.com'
+        -Ddns-servers='114.114.114.114 223.5.5.5'
         -Dsupport-url='https://www.facebook.com/groups/prodos.users/'
         -Ddefault-hierarchy=%{_hierarchy}
         -Dcontainer-uid-base-min=10485760
@@ -3139,3 +3141,4 @@ Resolves: rhbz#974132
 
 * Tue Jun 01 2010 Rahul Sundaram <sundaram@fedoraproject.org> - 0-0.0.git2010-06-02
 - Initial spec (adopted from Kay Sievers)
+

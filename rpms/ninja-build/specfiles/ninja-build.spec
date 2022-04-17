@@ -13,6 +13,7 @@ Source2:        macros.ninja
 BuildRequires:  gcc-c++
 %if 0%{?rhel} && 0%{?rhel} <= 7
 BuildRequires:  python34-devel
+%define __python3 python3.4
 %else
 BuildRequires:  python3-devel
 %endif

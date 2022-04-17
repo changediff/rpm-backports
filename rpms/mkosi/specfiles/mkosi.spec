@@ -11,23 +11,23 @@ BuildArch:      noarch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
-%if ! 0%{?facebook}
-BuildRequires:  pip
-%endif
+# %if ! 0%{?facebook}
+# BuildRequires:  pip
+# %endif
 
-Recommends:     dnf
-Recommends:     debootstrap
-Recommends:     arch-install-scripts
-Recommends:     edk2-ovmf
-Recommends:     gnupg
-Recommends:     xz
-Recommends:     tar
-Recommends:     btrfs-progs
-Recommends:     dosfstools
-Recommends:     e2fsprogs
-Recommends:     squashfs-tools
-Recommends:     veritysetup
-Recommends:     python3dist(argcomplete)
+Requires:     dnf
+Requires:     debootstrap
+Requires:     arch-install-scripts
+Requires:     edk2-ovmf
+Requires:     gnupg
+Requires:     xz
+Requires:     tar
+Requires:     btrfs-progs
+Requires:     dosfstools
+Requires:     e2fsprogs
+Requires:     squashfs-tools
+Requires:     veritysetup
+Requires:     python3dist(argcomplete)
 
 %description
 A fancy wrapper around "dnf --installroot", "debootstrap" and

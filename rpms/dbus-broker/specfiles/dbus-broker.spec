@@ -7,6 +7,8 @@ Summary:              Linux D-Bus Message Broker
 License:              ASL 2.0
 URL:                  https://github.com/bus1/dbus-broker
 Source0:              https://github.com/bus1/dbus-broker/releases/download/v%{version}/dbus-broker-%{version}.tar.xz
+# https://gist.github.com/nhatminhle/5181506
+Source1:              stdatomic.h
 Patch0:               0001-units-system-add-messagebus-alias.patch
 Patch1:               0001-launch-improve-error-handling-for-opendir.patch
 Patch2:               0001-metrics-change-the-constant-used-for-invalid-timesta.patch
@@ -26,8 +28,10 @@ BuildRequires:        pkgconfig(libsystemd)
 BuildRequires:        pkgconfig(systemd)
 BuildRequires:        gcc
 BuildRequires:        glibc-devel
-BuildRequires:        meson
-BuildRequires:        python3-docutils
+BuildRequires:        meson > 0.44.1
+# BuildRequires:        ninja-build == 1.8.2
+BuildRequires:        python36-docutils
+BuildRequires:        devtoolset-8
 Requires:             dbus-common
 Requires(pre):        shadow-utils
 Requires(post):       /usr/bin/systemctl
@@ -43,15 +47,25 @@ recent Linux kernel releases.
 
 %prep
 %autosetup -p1
+# ln -s /usr/bin/rst2man-3.4 /usr/bin/rst2man
+ln -s /usr/bin/rst2man-3 /usr/bin/rst2man
+source /opt/rh/devtoolset-8/enable
+echo "source /opt/rh/devtoolset-8/enable" >> /etc/profile
+gcc --version > /tmp/gcc.version.log
+# cp %{SOURCE1} /usr/include
 
 %build
+source /opt/rh/devtoolset-8/enable
 %meson -Dselinux=true -Daudit=true -Ddocs=true -Dsystem-console-users=gdm
 %meson_build
+# /usr/bin/meson compile -C x86_64-redhat-linux-gnu -j 1 --verbose
 
 %install
+source /opt/rh/devtoolset-8/enable
 %meson_install
 
 %check
+source /opt/rh/devtoolset-8/enable
 %meson_test
 
 %pre
