@@ -1,7 +1,6 @@
-# 使用文档
-CentOS7默认开启cgorupv2需要升级systemd版本，当前最靠谱的升级方式为Facebook维护的backports
+CentOS7中默认开启cgorupv2需要升级systemd版本，当前最靠谱的升级方式为Facebook维护的[backports](https://github.com/facebookarchive/rpm-backports)
 
-## 0. 快速使用说明
+## 0. 搭建本地仓库
 打包好的rpm包在repo目录下，可以使用createrepo命令快速搭建自定义mirror
 ```bash
 # 创建repodate
@@ -18,7 +17,11 @@ gpgcheck=0
 EOF
 ```
 
-如果有自己打包的需求，参考步骤1到3可在CentOS7.9系统上复现，需要配置[epel repo](https://mirrors.ustc.edu.cn/help/epel.html)和[elrepo](http://elrepo.org/tiki/HomePage)
+在此基础上，新增配置[epel repo](https://mirrors.ustc.edu.cn/help/epel.html)和[elrepo](http://elrepo.org/tiki/HomePage)
+
+完成源配置之后，参考步骤1到3可在CentOS7.9系统上复现打包过程
+
+==注意，本仓库中提供的systemd版本的dbus-broker没有升级，不能用于生产环境==
 
 
 ## 1. 安装并配置mock
@@ -128,10 +131,9 @@ mock --rebuild /root/rpmbuild/SRPMS/systemd-246.1-1.fb7.src.rpm
 |centos历史版本src.rpm下载|https://cbs.centos.org/koji/index|
 |spec规范文档|https://docs.fedoraproject.org/en-US/packaging-guidelines/|
 
-### 4.2 patch的使用
-
-
-
+### 4.2 systemd安装注意点
+1. 想要默认启动systemd，需要确保initrd启动调用的systemd为打包后的版本，通过`dmesg`可以查看。具体参考[issue](https://github.com/systemd/systemd/issues/19760)
+2. 升级systemd，注意要**先升级systemd**再升级内核，不然需要在重启后用dracut工具重新生成initrd
 
 # Facebook backported RPMs for CentOS
 
