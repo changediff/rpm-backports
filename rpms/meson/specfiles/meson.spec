@@ -1,13 +1,15 @@
 %global libname mesonbuild
 %if 0%{?rhel}
 %global python3_pkgversion 34
+%global __python3 python3.4
+%global python3_sitelib /usr/lib/python3.4/site-packages
 %define rpmmacrodir %{_rpmconfigdir}/macros.d
 %endif
 
 %bcond_with check
 
 Name:           meson
-Version:        0.44.0
+Version:        0.44.1
 Release:        1.fb1%{?dist}
 Summary:        High productivity build system
 
@@ -88,10 +90,12 @@ find -type f -name '*.py' -executable -exec sed -i -e '1s|.*|#!%{__python3}|' {}
 rm -rf "test cases/frameworks/17 mpi"
 
 %build
-%py3_build
+# %py3_build
+%{__python3} setup.py build
 
 %install
-%py3_install
+# %py3_install
+%{__python3} setup.py install --skip-build --root %{buildroot}
 install -Dpm0644 data/macros.%{name} %{buildroot}%{rpmmacrodir}/macros.%{name}
 
 %if %{with check}

@@ -42,7 +42,7 @@ BuildRequires: kernel-headers >= 5.6.13
 %endif
 
 ### Sources
-Source0: ftp://ftp.kernel.org/pub/linux/utils/util-linux/v%{upstream_major}/util-linux-%{upstream_version}.tar.xz
+Source0: https://cdn.kernel.org/pub/linux/utils/util-linux/v%{upstream_major}/util-linux-%{upstream_version}.tar.xz
 Source1: util-linux-login.pamd
 Source2: util-linux-remote.pamd
 Source3: util-linux-chsh-chfn.pamd
@@ -636,9 +636,9 @@ exit 0
 %{_mandir}/man8/agetty.8*
 %{_mandir}/man8/blkdiscard.8*
 %{_mandir}/man8/blkid.8*
-%ifnarch i686
-%{_mandir}/man8/blkzone.8*
-%endif
+# %ifnarch i686
+# %{_mandir}/man8/blkzone.8*
+# %endif
 %{_mandir}/man8/blockdev.8*
 %{_mandir}/man8/chcpu.8*
 %{_mandir}/man8/chmem.8*
@@ -686,9 +686,9 @@ exit 0
 %{_sbindir}/agetty
 %{_sbindir}/blkdiscard
 %{_sbindir}/blkid
-%ifnarch i686
-%{_sbindir}/blkzone
-%endif
+# %ifnarch i686
+# %{_sbindir}/blkzone
+# %endif
 %{_sbindir}/blockdev
 %{_sbindir}/chcpu
 %{_sbindir}/ctrlaltdel
@@ -725,9 +725,9 @@ exit 0
 %{compldir}/addpart
 %{compldir}/blkdiscard
 %{compldir}/blkid
-%ifnarch i686
-%{compldir}/blkzone
-%endif
+# %ifnarch i686
+# %{compldir}/blkzone
+# %endif
 %{compldir}/blockdev
 %{compldir}/cal
 %{compldir}/chcpu
@@ -1000,11 +1000,11 @@ exit 0
 
 * Fri Sep 22 2017 Karel Zak <kzak@redhat.com> - 2.31-0.1
 - upgrade to v2.31-rc1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.31/v2.31-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.31/v2.31-ReleaseNotes
 
 * Fri Sep 22 2017 Karel Zak <kzak@redhat.com> - 2.30.2-1
 - upgrade to v2.30.2
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.30/v2.30.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.30/v2.30.2-ReleaseNotes
 
 * Mon Aug 14 2017 Karel Zak <kzak@redhat.com> - 2.30.1-5
 - make ln-s usage more robust
@@ -1020,7 +1020,7 @@ exit 0
 
 * Thu Jul 20 2017 Karel Zak <kzak@redhat.com> - 2.30.1-1
 - upgrade to v2.30.1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.30/v2.30.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.30/v2.30.1-ReleaseNotes
 
 * Fri Jun  2 2017 Karel Zak <kzak@redhat.com> - 2.30-1
 - upgrade to v2.30
@@ -1031,7 +1031,7 @@ exit 0
 
 * Wed May 17 2017 Karel Zak <kzak@redhat.com> - 2.30-0.1
 - upgrade to v2.30-rc1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.30/v2.30-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.30/v2.30-ReleaseNotes
 
 * Mon Apr 17 2017 Davide Cavalca <dcavalca@fb.com> - 2.29.1-2.fb2
 - backport libmount patch to fix a regression with loop devices
@@ -1041,14 +1041,14 @@ exit 0
 
 * Fri Feb 24 2017 Karel Zak <kzak@redhat.com> - 2.29.2-1
 - upgrade to v2.29.2
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.29/v2.29.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.29/v2.29.2-ReleaseNotes
 
 * Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.29.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
 * Fri Jan 20 2017 Karel Zak <kzak@redhat.com> - 2.29.1-1
 - upgrade to v2.29.1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.29/v2.29.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.29/v2.29.1-ReleaseNotes
 
 * Mon Dec 19 2016 Miro Hrončok <mhroncok@redhat.com> - 2.29-2
 - Rebuild for Python 3.6
@@ -1064,15 +1064,15 @@ exit 0
 
 * Fri Sep 30 2016 Karel Zak <kzak@redhat.com> - 2.29-0.1
 - upgrade to v2.29-rc1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.29/v2.29-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.29/v2.29-ReleaseNotes
 
 * Wed Sep  7 2016 Karel Zak <kzak@redhat.com> - 2.28.2-1
 - upgrade to stable 2.28.2
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.28/v2.28.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.28/v2.28.2-ReleaseNotes
 
 * Thu Aug 18 2016 Karel Zak <kzak@redhat.com> - 2.28.1-1
 - upgrade to stable 2.28.1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.28/v2.28.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.28/v2.28.1-ReleaseNotes
 
 * Tue Jul 19 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.28-4
 - https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages
@@ -1094,7 +1094,7 @@ exit 0
 
 * Tue Mar 22 2016 Karel Zak <kzak@redhat.com> - 2.28-0.1
 - upgrade to v2.28-rc1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.28/v2.28-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.28/v2.28-ReleaseNotes
 - add patch to fix broken swapon
 - add subpackage util-linux-user (utils with dependence on libuser)
 
@@ -1112,7 +1112,7 @@ exit 0
 
 * Mon Nov  2 2015 Karel Zak <kzak@redhat.com> - 2.27.1
 - upgrade to v2.27.1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.27/v2.27.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.27/v2.27.1-ReleaseNotes
 
 * Mon Sep  7 2015 Karel Zak <kzak@redhat.com> - 2.27
 - upgrade to v2.27
@@ -1129,7 +1129,7 @@ exit 0
 
 * Fri Jul 31 2015 Karel Zak <kzak@redhat.com> - 2.27-0.1
 - upgrade to v2.27-rc1
-  http://ftp.kernel.org/pub/linux/utils/util-linux/v2.27/v2.27-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.27/v2.27-ReleaseNotes
 - add lsipc
 
 * Thu Jul 16 2015 Karel Zak <kzak@redhat.com> - 2.26.2-3
@@ -1140,7 +1140,7 @@ exit 0
 
 * Thu Apr 30 2015 Karel Zak <kzak@redhat.com> - 2.26.2-1
 - upgrade to stable release 2.26.2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.26/v2.26.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.26/v2.26.2-ReleaseNotes
 
 * Sat Feb 21 2015 Till Maas <opensource@till.name> - 2.26-2
 - Rebuilt for Fedora 23 Change
@@ -1160,7 +1160,7 @@ exit 0
 
 * Thu Jan 15 2015 Karel Zak <kzak@redhat.com> 2.26-0.1
 - upgrade to 2.26-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.26/v2.26-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.26/v2.26-ReleaseNotes
 - build with -pie for uuidd
 - new command zramctl
 
@@ -1169,15 +1169,15 @@ exit 0
 
 * Fri Oct 24 2014 Karel Zak <kzak@redhat.com> 2.25.2-1
 - upgrade to stable 2.25.2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.25/v2.25.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.25/v2.25.2-ReleaseNotes
 
 * Wed Sep  3 2014 Karel Zak <kzak@redhat.com> 2.25.1-1
 - upgrade to stable 2.25.1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.25/v2.25.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.25/v2.25.1-ReleaseNotes
 
 * Wed Aug 27 2014 Karel Zak <kzak@redhat.com> 2.25.1-0.1
 - upgrade to release 2.25.1-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.25/v2.25.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.25/v2.25.1-ReleaseNotes
 
 * Mon Aug 18 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.25-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
@@ -1200,7 +1200,7 @@ exit 0
 
 * Thu Jun 19 2014 Karel Zak <kzak@redhat.com> 2.25-0.1
 - upgrade to release 2.25-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.25/v2.25-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.25/v2.25-ReleaseNotes
 
 * Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.24.2-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
@@ -1219,14 +1219,14 @@ exit 0
 
 * Thu Apr 24 2014 Karel Zak <kzak@redhat.com> 2.24.2-1
 - upgrade to stable release 2.24.2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.24/v2.24.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.24/v2.24.2-ReleaseNotes
 
 * Thu Jan 30 2014 Karel Zak <kzak@redhat.com> 2.24.1-2
 - use rpm autosetup
 
 * Mon Jan 20 2014 Karel Zak <kzak@redhat.com> 2.24.1-1
 - upgrade to stable release 2.24.1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.24/v2.24.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.24/v2.24.1-ReleaseNotes
 
 * Mon Nov 18 2013 Karel Zak <kzak@redhat.com> 2.24-2
 - fix #1031262 - lsblk -D segfault
@@ -1255,7 +1255,7 @@ exit 0
 
 * Wed Jul 31 2013 Karel Zak <kzak@redhat.com> 2.23.2-1
 - upgrade to stable release 2.23.2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.23/v2.23.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.23/v2.23.2-ReleaseNotes
 
 * Thu Jun 13 2013 Karel Zak <kzak@redhat.com> 2.23.1-3
 - fix #972457 - agetty idle I/O polling causes elevated CPU usage
@@ -1291,7 +1291,7 @@ exit 0
 
 * Fri Mar 22 2013 Karel Zak <kzak@redhat.com> 2.23-0.1
 - upgrade to the release 2.23-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.23/v2.23-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.23/v2.23-ReleaseNotes
 - add nsenter and blkdiscard
 - remove tunelp
 
@@ -1347,7 +1347,7 @@ exit 0
 
 * Thu Aug 16 2012 Karel Zak <kzak@redhat.com> 2.22-0.1
 - upgrade to the release 2.22-rc2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.22/v2.22-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.22/v2.22-ReleaseNotes
 - add sulogin, utmpdump, lslocks, wdctl
 
 * Fri Jul 27 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.21.2-3
@@ -1374,7 +1374,7 @@ exit 0
 
 * Tue Feb 07 2012 Karel Zak <kzak@redhat.com> 2.21-0.1
 - upgrade to the release 2.21-rc2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.21/v2.21-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.21/v2.21-ReleaseNotes
 - add {fsck,mkfs}.minix
 - add new command chcpu(8)
 - add new command prlimit(1)
@@ -1405,11 +1405,11 @@ exit 0
 
 * Wed Aug 17 2011 Karel Zak <kzak@redhat.com> 2.20-0.2
 - upgrade to the release 2.20-rc2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.20/v2.20-rc2-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.20/v2.20-rc2-ChangeLog
 
 * Tue Aug  2 2011 Karel Zak <kzak@redhat.com> 2.20-0.1
 - upgrade to the release 2.20-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.20/v2.20-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.20/v2.20-ReleaseNotes
 
 * Mon Jul  4 2011 Karel Zak <kzak@redhat.com> 2.19.1-2
 - fix #716483 - /var/tmp --(BIND-mounted)--> /tmp disrupts/hangs bootup
@@ -1419,11 +1419,11 @@ exit 0
 
 * Fri May  6 2011 Karel Zak <kzak@redhat.com> 2.19.1-1
 - upgrade to the release 2.19.1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19.1-ReleaseNotes
 
 * Wed Apr 20 2011 Karel Zak <kzak@redhat.com> 2.19.1-0.1
 - upgrade to the release 2.19.1-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19.1-rc1-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19.1-rc1-ChangeLog
 
 * Mon Mar  7 2011 Karel Zak <kzak@redhat.com> 2.19-2
 - fix #682502 - Broken source URL to floppy tarball, new version available
@@ -1431,7 +1431,7 @@ exit 0
 
 * Thu Feb 10 2011 Karel Zak <kzak@redhat.com> 2.19-1
 - upgrade to the release 2.19
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19-ReleaseNotes
 - remove /sbin/mount.tmpfs -- integrated to mount(8)
 
 * Tue Feb  8 2011 Karel Zak <kzak@redhat.com> 2.19-0.6
@@ -1442,11 +1442,11 @@ exit 0
 
 * Tue Jan 25 2011 Karel Zak <kzak@redhat.com> 2.19-0.4
 - upgrade to the release 2.19-rc3
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19-rc3-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19-rc3-ChangeLog
 
 * Tue Jan 25 2011 Karel Zak <kzak@redhat.com> 2.19-0.3
 - upgrade to the release 2.19-rc2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19-rc2-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19-rc2-ChangeLog
 - fix #671893 - SELinux is preventing /bin/chown from 'setattr' accesses
   on the file mounts.
 
@@ -1455,7 +1455,7 @@ exit 0
 
 * Wed Jan  5 2011 Karel Zak <kzak@redhat.com> 2.19-0.1
 - upgrade to the release 2.19-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux/v2.19/v2.19-ReleaseNotes
 
 * Tue Oct 26 2010 Karel Zak <kzak@redhat.com> 2.18-5
 - fix #645640 - new "-s" parameter parsing in agetty does not work
@@ -1474,24 +1474,24 @@ exit 0
 
 * Wed Jun 30 2010 Karel Zak <kzak@redhat.com> 2.18-1
 - upgrade to the final 2.18
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.18/v2.18-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.18/v2.18-ReleaseNotes
  
 * Fri Jun 18 2010 Karel Zak <kzak@redhat.com> 2.18-0.2
 - upgrade to 2.18-rc2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.18/v2.18-rc2-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.18/v2.18-rc2-ChangeLog
 
 * Tue Jun  8 2010 Karel Zak <kzak@redhat.com> 2.18-0.1
 - upgrade to the release 2.18-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.18/v2.18-ReleaseNotes
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.18/v2.18-rc1-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.18/v2.18-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.18/v2.18-rc1-ChangeLog
 
 * Mon Apr 12 2010 Karel Zak <kzak@redhat.com> 2.17.2-1
 - fix #581252 - remounting tmpfs fails because of hidden rootcontext=
 - fix #580296 - "rtcwake" does miss the "off" option
 - fix #575734 - use microsecond resolution for blkid cache entries
 - upgrade to the bugfix release 2.17.2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17.2-ReleaseNotes
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17.2-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17.2-ChangeLog
 - minor fixed in spec file
 
 * Thu Mar 11 2010 Karel Zak <kzak@redhat.com> 2.17.1-2
@@ -1499,8 +1499,8 @@ exit 0
 
 * Mon Feb 22 2010 Karel Zak <kzak@redhat.com> 2.17.1-1
 - upgrade to the final 2.17.1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17.1-ReleaseNotes
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17.1-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17.1-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17.1-ChangeLog
 
 * Tue Feb 16 2010 Karel Zak <kzak@redhat.com> 2.17.1-0.1
 - upgrade to 2.17.1-rc1
@@ -1517,8 +1517,8 @@ exit 0
 
 * Fri Jan  8 2010 Karel Zak <kzak@redhat.com> 2.17-1
 - upgrade to the final 2.17
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17-ReleaseNotes
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17-ChangeLog
 - fix #545147 - util-linux-ng : Violation of the Packaging Guidelines
   (remove uuid and blkid static libs)
 
@@ -1527,7 +1527,7 @@ exit 0
 
 * Wed Dec  9 2009 Karel Zak <kzak@redhat.com> 2.17-0.5
 - upgrade to 2.17-rc2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17-rc2-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17-rc2-ChangeLog
 
 * Mon Dec  7 2009 Karel Zak <kzak@redhat.com> 2.17-0.4
 - add clock.8 man page (manlink to hwclock)
@@ -1535,7 +1535,7 @@ exit 0
 
 * Mon Nov 23 2009 Karel Zak <kzak@redhat.com> 2.17-0.3
 - upgrade to 2.17-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17-rc1-ChangeLog
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.17/v2.17-rc1-ChangeLog
 
 * Tue Nov 10 2009 Karel Zak <kzak@redhat.com> 2.17-0.2.git10dfc39
 - upgrade to pre-release snapshot (official changelog not available yet, see
@@ -1591,7 +1591,7 @@ exit 0
 
 * Sat Jul 25 2009 Karel Zak <kzak@redhat.com> 2.16-1
 - upgrade to 2.16
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.16/v2.16-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.16/v2.16-ReleaseNotes
 - enable built-in libuuid (replacement for the old uuid stuff from e2fsprogs)
 - new commands switch_root, uuidgen and uuidd (subpackage)
 
@@ -1604,8 +1604,8 @@ exit 0
 
 * Thu Jun  4 2009 Karel Zak <kzak@redhat.com> 2.15.1-0.1
 - upgrade to 2.15.1-rc1
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.15/v2.15-ReleaseNotes
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.15/v2.15.1-rc1-ChangeLog 
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.15/v2.15-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.15/v2.15.1-rc1-ChangeLog 
 - merged patches:
   util-linux-ng-2.14-login-remote.patch
   util-linux-ng-2.14-fdisk-4k-I.patch
@@ -1645,7 +1645,7 @@ exit 0
 
 * Mon Feb  9 2009 Karel Zak <kzak@redhat.com> 2.14.2-1
 - upgrade to stable 2.14.2
-  ftp://ftp.kernel.org/pub/linux/utils/util-linux-ng/v2.14/v2.14.2-ReleaseNotes
+  https://cdn.kernel.org/pub/linux/utils/util-linux-ng/v2.14/v2.14.2-ReleaseNotes
 
 * Thu Jan 22 2009 Karel Zak <kzak@redhat.com> 2.14.2-0.2
 - fix #480413 - util-linux-ng doesn't include scriptreplay

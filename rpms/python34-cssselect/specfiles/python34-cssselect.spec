@@ -1,4 +1,6 @@
 # %global with_tests 1
+%global __python3 /bin/python3.4
+%global python3_sitearch /usr/lib/python3.4/site-packages
 
 Name:           python34-cssselect
 Version:        0.9.1
@@ -13,9 +15,9 @@ Source0:        https://pypi.python.org/packages/source/c/cssselect/cssselect-%{
 BuildArch:      noarch
 
 BuildRequires:  python34-devel python34-setuptools
-%if 0%{?with_tests}
-BuildRequires:  python34-lxml
-%endif # if with_tests
+# %if 0%{?with_tests}
+# BuildRequires:  python34-lxml
+# %endif # if with_tests
 
 %description
 Cssselect parses CSS3 Selectors and translates them to XPath 1.0 expressions.
@@ -29,17 +31,17 @@ matching elements in an XML or HTML document.
 %{__python3} setup.py build
 
 %check
-%if 0%{?with_tests}
-PYTHONPATH=$(pwd) %{__python3} cssselect/tests.py
-%endif # with_tests
+# %if 0%{?with_tests}
+# PYTHONPATH=$(pwd) %{__python3} cssselect/tests.py
+# %endif # with_tests
 
 %install
 %{__python3} setup.py install -O1 --skip-build --root $RPM_BUILD_ROOT
-chmod 755 $RPM_BUILD_ROOT/%{python3_sitelib}/cssselect/tests.py
+# chmod 755 $RPM_BUILD_ROOT/%{python3_sitelib}/cssselect/tests.py
 
 %files
 %doc AUTHORS docs README.rst CHANGES LICENSE PKG-INFO
-%{python3_sitelib}/cssselect*
+%{python3_sitearch}/cssselect*
 
 %changelog
 * Thu Jul 28 2016 Davide Cavalca <dcavalca@fb.com> - 0.9.1-10.fb2
